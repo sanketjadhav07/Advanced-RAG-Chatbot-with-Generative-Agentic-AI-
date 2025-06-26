@@ -39,18 +39,18 @@ llm = Ollama(model="llama2")
 
 # Define prompts
 prompt1 = ChatPromptTemplate.from_template(
-    "Write me an essay about {topic} with 100 words")
+    "Write me an about {topic} ")
 prompt2 = ChatPromptTemplate.from_template(
-    "Write me a poem about {topic} for a 5 years child with 100 words")
+    "Write me a  about {topic} ")
 
 add_routes(app, prompt1 | ChatOpenAI(), path="/essay")
 add_routes(app, prompt2 | llm, path="/poem")
 
 # Load documents and create vector store
-loader = PyPDFLoader("attention.pdf")
+loader = PyPDFLoader(".pdf")
 docs = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000, chunk_overlap=20)
+    chunk_size=1000, chunk_overlap=50)
 documents = text_splitter.split_documents(docs)
 db = FAISS.from_documents(documents[:30], OpenAIEmbeddings())
 
@@ -59,19 +59,19 @@ db = FAISS.from_documents(documents[:30], OpenAIEmbeddings())
 
 def get_openai_response(input_text):
     response = requests.post(
-        "http://localhost:8000/essay/invoke", json={'input': {'topic': input_text}})
+        "http://localhost:7000/essay/invoke", json={'input': {'topic': input_text}})
     return response.json()['output']['content']
 
 
 def get_ollama_response(input_text):
     response = requests.post(
-        "http://localhost:8000/poem/invoke", json={'input': {'topic': input_text}})
+        "http://localhost:7000/poem/invoke", json={'input': {'topic': input_text}})
     return response.json()['output']
 
 
 st.title('Langchain Demo With LLAMA2 API')
-input_text = st.text_input("Write an essay on")
-input_text1 = st.text_input("Write a poem on")
+input_text = st.text_input("")
+input_text1 = st.text_input("")
 
 if input_text:
     st.write(get_openai_response(input_text))
@@ -83,8 +83,7 @@ if input_text1:
 retriever = db.as_retriever()
 llm = Ollama(model="llama2")
 prompt = ChatPromptTemplate.from_template("""
-Answer the following question based only on the provided context. 
-Think step by step before providing a detailed answer.  
+Answer the following question based only on the provided context.  
 <context>
 {context}
 </context>
@@ -100,4 +99,4 @@ if input_query:
 
 # Run FastAPI app
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="localhost", port=7000)
