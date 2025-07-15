@@ -20,10 +20,10 @@ The **Advanced RAG Chatbot with Generative Agentic AI** is a sophisticated conve
 - Langchain
 - OpenAI API
 - Ollama
-- FAISS (Facebook AI Similarity Search)
-- dotenv (for environment variable management)
+- FAISS 
+- dotenv 
 
 ### Prerequisites
 
-- Python 3.x installed on your machine.
-- An OpenAI account (if using OpenAI's API) or access to a suitable generative model.
+- Python 3.12.
+- An OpenAI account or access to a suitable generative model.
