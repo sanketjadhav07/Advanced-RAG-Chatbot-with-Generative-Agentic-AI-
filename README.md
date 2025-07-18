@@ -1,5 +1,3 @@
-# 🌟 Advanced RAG Chatbot with Generative AI
-
 # 🌟 Advanced RAG Chatbot with Generative Agentic AI
 
 ## 🤖 Overview
@@ -39,47 +37,6 @@ Before you can use the Advanced RAG Chatbot, you will need to ensure you have th
 - **Python 3.12**: Make sure you have this version of Python installed on your computer. Python is the programming language used to develop the chatbot.
 
 - **OpenAI Account**: You will need an account with OpenAI or access to a suitable generative model. This is necessary for the chatbot to generate responses.
-
-## ❓ Common Questions
-
-**Q: Is this like ChatGPT?**  
-A: Similar, but better for specific topics because you can add your own knowledge.
-
-**Q: Can I use it without coding?**  
-A: The demo version yes, but customizing requires some technical help.
-
-**Q: How accurate are the answers?**  
-A: More accurate than basic chatbots when you provide good source documents.
-
-## 📬 Contact
-
-For more information, please contact our team or open an issue in this repository.
-
-## 🤖 What is this project?
-
-Imagine having a super-smart assistant that can understand your questions and provide thoughtful answers by combining:
-- Knowledge from documents (like having a librarian)
-- Creative thinking (like a writer)
-- Memory of your conversation (like a good friend)
-
-That's exactly what this chatbot does!
-
-## ✨ Key Features
-
-### 📚 Smart Research + Creative Answers
-- Finds relevant information from its knowledge base
-- Combines this with AI-generated responses
-- Provides answers that are both accurate and natural
-
-### 💡 Context-Aware Conversations
-- Remembers what you've discussed
-- Follows the flow of conversation naturally
-- Adapts responses based on previous messages
-
-### 🛠️ Flexible & Customizable
-- Can be trained for different topics
-- Works for both simple Q&A and creative writing
-- Integrates with popular AI services
 
 ## 🔧 For Non-Technical Users
 
